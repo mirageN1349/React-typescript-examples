@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { Select, SelectOption } from './components/Select';
+
+type Status = 'start' | 'progress' | 'end';
 function App() {
+  const options: SelectOption<Status>[] = [
+    {
+      label: '1',
+      value: 'progress',
+    },
+    {
+      label: '2',
+      value: 'start',
+    },
+    {
+      label: '3',
+      value: 'end',
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Select<Status> options={options} value="progress" />
     </div>
   );
 }
