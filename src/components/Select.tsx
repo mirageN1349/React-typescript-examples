@@ -3,6 +3,9 @@ import ReactSelect from 'react-select';
 // value - object -> string
 // Array<SelectOption>
 // SelectOption[]
+// OnChangeValue
+// isMulti
+// error
 
 type Props<V> = {
   value?: V;

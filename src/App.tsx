@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { MouseEvent, ReactNodeArray } from 'react';
 
 import './App.css';
+import { Button } from './components/Button';
 import { Select, SelectOption } from './components/Select';
 
 type Status = 'start' | 'progress' | 'end';
@@ -20,9 +21,20 @@ function App() {
     },
   ];
 
+  function handleClick(e: MouseEvent<HTMLButtonElement>) {
+    console.log('click');
+  }
+
+  // const nodeArr: ReactNodeArray = [Button, Select].map(Component => {
+  //   return <Component />;
+  // });
+
   return (
     <div>
       <Select<Status> options={options} value="progress" />
+      <Button type="submit" onClick={handleClick}>
+        1343
+      </Button>
     </div>
   );
 }
